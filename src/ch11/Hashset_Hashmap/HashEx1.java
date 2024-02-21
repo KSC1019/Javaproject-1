@@ -1,4 +1,4 @@
-package ch11.Hash;
+package ch11.Hashset_Hashmap;
 import java.util.*;
 
 public class HashEx1 {

@@ -1,4 +1,4 @@
-package ch11.Hash;
+package ch11.Hashset_Hashmap;
 
 import java.util.HashSet;
 import java.util.Set;
