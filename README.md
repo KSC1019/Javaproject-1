@@ -51,7 +51,7 @@
 
 ### 2.5 ERD
 
-
+https://github.com/KSC1019/Javaproject-1/blob/master/src/ch9/project_erd.png
 
 
 ### 2.6 진행 상황
