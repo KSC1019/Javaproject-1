@@ -43,3 +43,14 @@
 
 
 ## 진행상황
+
+1. 회원가입 & 로그인 (User & Join) (완료)
+
+2. 질문 게시판 (Question) (완료)
+
+3. 답변과 답변에 대한 질문 (Answer & Comment)
+
+4. 점수와 등급 (Point & Rank)
+
+
+ 
