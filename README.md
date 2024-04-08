@@ -51,7 +51,7 @@
 ### API 명세서 (표 정리해서 이미지로 진행)
 #### 1. User
 ##### 1.1 회원가입
-'''
+''' C
 POST /api/users
 Content-Type: application/json
 
@@ -59,7 +59,7 @@ Content-Type: application/json
   "email": "user@example.com",
   "password": "password123",
   "nickname": "oreumi"
-}
+} 
 '''
 2. Question)
 3. Answer)
