@@ -257,8 +257,125 @@ HTTP/1.1 204 No Content
 
 ```
 #### 3. Answer)
+##### 3.1 답변 생성
+request :
+```json
+POST /api/questions/{questionId}
+Authorization: Bearer {token}
 
+{
+  "content": "Answer Content"
+}
+```
+response :
+```json
+{
+  "answer_id": 1,
+  "content": "Answer Content",
+  "userId": 1,
+  "questionId": 1,
+  "createdAt": "2023-06-08T12:00:00Z",
+  "updatedAt": "2023-06-08T12:00:00Z"
+}
+```
+##### 3.2 답변 목록 조회
+request : 
+```json
+GET /api/questions/{questionId}/answers?page=1&size=10
+```
+response : 
+```json
+{
+  "content": [
+    {
+      "answer_id": 1,
+      "content": "Answer Content 1",
+      "userId": 1,
+      "questionId": 1,
+      "createdAt": "2023-06-08T12:00:00Z",
+      "updatedAt": "2023-06-08T12:00:00Z"
+    },
+    {
+      "answer_id": 2,
+      "content": "Answer Content 2",
+      "userId": 2,
+      "questionId": 1,
+      "createdAt": "2023-06-08T12:30:00Z",
+      "updatedAt": "2023-06-08T12:30:00Z"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 1,
+    "pageSize": 10,
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    }
+  },
+  "totalPages": 1,
+  "totalElements": 2,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "numberOfElements": 2,
+  "first": true,
+  "empty": false
+}
+```
+##### 3.3 답변 상세 조회
+request : 
+```json
+GET /api/answers/{answerId}
+```
+response :
+```json
+{
+  "answer_id": 1,
+  "content": "Answer Content",
+  "userId": 1,
+  "questionId": 1,
+  "createdAt": "2023-06-08T12:00:00Z",
+  "updatedAt": "2023-06-08T12:00:00Z"
+}
+```
+##### 3.4 답변 수정
+request :
+```json
+PUT /api/answers/{answerId}
+Authorization: Bearer {token}
 
+{
+  "content": "Updated Answer Content"
+}
+```
+response :
+```json
+{
+  "answer_id": 1,
+  "content": "Updated Answer Content",
+  "userId": 1,
+  "questionId": 1,
+  "createdAt": "2023-06-08T12:00:00Z",
+  "updatedAt": "2023-06-08T13:00:00Z"
+}
+```
+##### 답변 삭제
+request : 
+```json
+DELETE /api/answers/{answerId}
+Authorization: Bearer {token}
+```
+response :
+```json
+HTTP/1.1 204 No Content
+
+```
 ### 개발 시간
 
 - 3/22 ~ 3/26 (기획 및 설계) 프로젝트 주제를 설정하고 주제에 대한 요구사항을 파악하고 ERD설계 및 깃 설정을 진행했습니다.
@@ -283,6 +400,7 @@ HTTP/1.1 204 No Content
 
 6. 테스트 및 배포 (진행중)
 
+## 3. 마무리
 ### 프로젝트 이미지
 
 |제목|내용|
@@ -301,5 +419,5 @@ HTTP/1.1 204 No Content
 
 김정용 :  "생각보다 디테일한 부분에서 시간이 많이 필요하다는 점을 알았습니다 이번에 아쉬웠던 점을 다음 프로젝트에서는 보완하고 싶습니다"
 
-백승진 : "플젝기간동안 많이 배울수 있어서 좋았습니다."
+백승진 : "프로젝트 기간동안 많이 배울수 있어서 좋았습니다."
 
