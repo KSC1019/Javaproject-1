@@ -55,11 +55,7 @@
 
 |주제|제목|request|
 |:---|:---:|:---:|
-|User|회원가입|'''{
-  "email": "user@example.com",
-  "password": "password123",
-  "nickname": "oreumi"
-}'''
+|User|회원가입|''' {"email": "user@example.com","password": "password123","nickname": "oreumi"} '''
 
 
 ### 개발 시간
