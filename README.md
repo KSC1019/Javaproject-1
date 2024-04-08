@@ -53,13 +53,13 @@
 ##### 1.1 회원가입
 
  
-  '''json
+  ```json
   {
     "email": "user@example.com",
     "password": "password123",
     "nickname": "oreumi"
   } 
-  '''
+  ```
 
 2. Question)
 3. Answer)
