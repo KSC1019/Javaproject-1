@@ -52,7 +52,7 @@
 #### 1. User
 ##### 1.1 회원가입
 
- 
+ request : 
   ```json
   {
     "email": "user@example.com",
@@ -60,6 +60,17 @@
     "nickname": "oreumi"
   } 
   ```
+response : 
+```json
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "email": "user@example.com",
+  "nickname": "oreumi"
+}
+```
 
 2. Question)
 3. Answer)
