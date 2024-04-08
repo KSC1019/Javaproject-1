@@ -49,13 +49,20 @@
 (project_erd 이미지)
 
 ### API 명세서 (표 정리해서 이미지로 진행)
-1. User)
+#### 1. User
+##### 1.1 회원가입
+'''
+POST /api/users
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "password123",
+  "nickname": "oreumi"
+}
+'''
 2. Question)
 3. Answer)
-
-|주제|제목|request|
-|:---|:---:|:---:|
-|User|회원가입|''' {"email": "user@example.com","password": "password123","nickname": "oreumi"} '''
 
 
 ### 개발 시간
@@ -94,11 +101,11 @@
 
 ### 프로젝트에 대한 소감
  
-강석찬
+강석찬 : "첫 프로젝트라서 긴장도 많이 했지만 믿을 수 있는 팀원들을 만나서 많은 것을 배웠으며, 잘 해낸거 같습니다."
 
-고경욱
+고경욱 : "부족한 점이 믾았지만 프로젝트 경험으로 실력을 많이 키울 수 있었습니다"
 
-김정용
+김정용 :  "생각보다 디테일한 부분에서 시간이 많이 필요하다는 점을 알았습니다 이번에 아쉬웠던 점을 다음 프로젝트에서는 보완하고 싶습니다"
 
-백승진
+백승진 : "플젝기간동안 많이 배울수 있어서 좋았습니다."
 
