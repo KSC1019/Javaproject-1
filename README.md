@@ -53,7 +53,9 @@
 ##### 1.1 회원가입
 
  request : 
+
   ```json
+POST /api/users
   {
     "email": "user@example.com",
     "password": "password123",
@@ -71,6 +73,7 @@ response :
 ##### 1.2 로그인
 request : 
 ```json
+POST /api/users/login
 {
   "email": "user@example.com",
   "password": "password123"
@@ -84,6 +87,7 @@ response :
 ```
 ##### 1.3 사용자 정보 조회
 request : 
+
 ```json
 GET /api/users/{userId}
 Authorization: Bearer {token}
@@ -96,9 +100,162 @@ response :
   "nickname": "oreumi"
 }
 ```
+#### 1.4 사용자 정보 수정
+request :
+```json
+PUT /api/users/{userId}
+Authorization: Bearer {token}
+
+{
+  "nickname": "oreumi",
+  "password": "newpassword123"
+}
+```
+response :
+```json
+{
+  "user_id": 1,
+  "email": "user@example.com",
+  "nickname": "oreumi"
+}
+```
+##### 1.5 회원 탈퇴
+request :
+```json
+DELETE /api/users/{userId}
+Authorization: Bearer {token}
+```
+response :
+```json
+HTTP/1.1 204 No Content
+```
 
 #### 2. Question)
+##### 2.1 질문 생성
+request : 
+```json
+POST /api/questions
+Authorization: Bearer {token}
 
+{
+  "title": "Question Title",
+  "content": "Question Content"
+}
+```
+response :
+```json
+{
+  "question_id": 1,
+  "title": "Question Title",
+  "content": "Question Content",
+  "userId": 1,
+  "createdAt": "2023-06-08T10:30:00Z",
+  "updatedAt": "2023-06-08T10:30:00Z"
+}
+```
+##### 2.2  질문 목록 조회
+request : 
+```json
+GET /api/questions?page=1&size=10
+```
+response :
+```json
+
+{
+  "content": [
+    {
+      "question_id": 1,
+      "title": "Question Title 1",
+      "content": "Question Content 1",
+      "userId": 1,
+      "createdAt": "2023-06-08T10:30:00Z",
+      "updatedAt": "2023-06-08T10:30:00Z"
+    },
+    {
+      "question_id": 2,
+      "title": "Question Title 2",
+      "content": "Question Content 2",
+      "userId": 2,
+      "createdAt": "2023-06-08T11:00:00Z",
+      "updatedAt": "2023-06-08T11:00:00Z"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 1,
+    "pageSize": 10,
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    }
+  },
+  "totalPages": 1,
+  "totalElements": 2,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "numberOfElements": 2,
+  "first": true,
+  "empty": false
+}
+```
+##### 2.3 질문 상세 조회
+request : 
+```json
+GET /api/questions/{questionId}
+```
+response : (ex : questionId == 1)
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "question_id": 1,
+  "title": "Question Title",
+  "content": "Question Content",
+  "userId": 1,
+  "createdAt": "2023-06-08T10:30:00Z",
+  "updatedAt": "2023-06-08T10:30:00Z"
+}
+```
+##### 2.4 질문 수정
+request : 
+```json
+PUT /api/questions/{questionId}
+Authorization: Bearer {token}
+
+{
+  "title": "Updated Question Title",
+  "content": "Updated Question Content"
+}
+```
+response :
+```json
+{
+  "question_id": 1,
+  "title": "Updated Question Title",
+  "content": "Updated Question Content",
+  "userId": 1,
+  "createdAt": "2023-06-08T10:30:00Z",
+  "updatedAt": "2023-06-08T11:30:00Z"
+}
+```
+
+##### 2.5 질문 삭제
+```json
+DELETE /api/questions/{questionId}
+Authorization: Bearer {token}
+```
+response :
+```json
+HTTP/1.1 204 No Content
+
+```
 #### 3. Answer)
 
 
