@@ -52,14 +52,14 @@
 #### 1. User
 ##### 1.1 회원가입
 
-  POST /api/users
-  Content-Type: application/json
-  
+ 
+  '''json
   {
     "email": "user@example.com",
     "password": "password123",
     "nickname": "oreumi"
   } 
+  '''
 
 2. Question)
 3. Answer)
