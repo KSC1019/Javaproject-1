@@ -62,9 +62,34 @@
   ```
 response : 
 ```json
-HTTP/1.1 201 Created
-Content-Type: application/json
-
+{
+  "user_id": 1,
+  "email": "user@example.com",
+  "nickname": "oreumi"
+}
+```
+##### 1.2 로그인
+request : 
+```json
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+```
+response : 
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+##### 1.3 사용자 정보 조회
+request : 
+```json
+GET /api/users/{userId}
+Authorization: Bearer {token}
+```
+response :
+```json
 {
   "user_id": 1,
   "email": "user@example.com",
@@ -72,8 +97,9 @@ Content-Type: application/json
 }
 ```
 
-2. Question)
-3. Answer)
+#### 2. Question)
+
+#### 3. Answer)
 
 
 ### 개발 시간
